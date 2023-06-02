@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-table-ukpostcode
+      author: andylow
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: uk_postcode
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: ukpc_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    unique: true
+                  name: postcode
+                  type: varchar(10)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: latitude
+                  type: decimal(10,6)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: longitude
+                  type: decimal(10,6)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: deleted
+                  type: boolean
+                  defaultValueBoolean: false
+            tableName: uk_postcode
+  - changeSet:
+      id: 001-load-data-ukpostcode
+      author: andylow
+      changes:
+        - loadData:
+            tableName: UK_POSTCODE
+            encoding: UTF-8
+            file: db/data/ukpostcodes.csv
+            separator: ","
