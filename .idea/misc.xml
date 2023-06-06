@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/demo-springboot/pom.xml" />
         <option value="$PROJECT_DIR$/shared-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>

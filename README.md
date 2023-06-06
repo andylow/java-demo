@@ -77,3 +77,8 @@ Once you see the console is printing:
 Started DemoApplication in 3.803 seconds (process running for 6.937)
 ```
 means the application has started correctly.
+
+# Getting Started
+Once application server is running, 
+you can access `/swagger-ui.html` to try out the API using OpenAPI docs.
+For e.g.: http://localhost:8080/swagger-ui.html
